@@ -27,7 +27,7 @@ class BlockList(NamedTuple):
 
 class BlockListGenerator(abc.ABC):
     def generate(self, domains: Iterable[str], filename: str):
-        ...
+        ...  # pragma: no cover
 
 
 class DnsmasqGenerator(BlockListGenerator):
@@ -97,14 +97,14 @@ def parse_block_list(list_type: BlockListType, f: BinaryIO) -> Iterable[str]:
             if not line:
                 continue
             if list_type is BlockListType.hosts:
-                if (m := HOSTS_REGEXP.match(line)) is not None and (
-                    group := m.group(1).strip()
+                if (match := HOSTS_REGEXP.match(line)) is not None and (
+                    domain := match.group(1).strip()
                 ):
-                    yield group
+                    yield domain
             elif list_type is BlockListType.simple:
                 if not line.startswith("#"):
                     yield line
-            else:
+            else:  # pragma: no cover
                 raise ValueError(f"unsupported list type {list_type}")
 
     for line in reader():
@@ -114,7 +114,7 @@ def parse_block_list(list_type: BlockListType, f: BinaryIO) -> Iterable[str]:
             try:
                 # Validate syntax and yield.
                 yield dns.name.from_text(domain).to_text(omit_final_dot=True)
-            except dns.exception.DNSException:
+            except dns.exception.DNSException:  # pragma: no cover
                 pass
 
 

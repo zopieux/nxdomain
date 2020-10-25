@@ -1,0 +1,8 @@
+example.org
+example.com
+# A comment.
+an invalid line
+
+  # Another comment.
+
+example.net # An inline comment.
