@@ -1,5 +1,7 @@
 # nxdomain
  
+[![Build status](https://github.com/Zopieux/nxdomain/workflows/Test%20and%20package/badge.svg)](https://github.com/Zopieux/nxdomain/actions)
+
 A domain (ad) block list creator. Takes block lists from local files or URLs as input
 (in `hosts(5)` or domain-list format) and outputs a BIND zone or dnsmasq config.
 

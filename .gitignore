@@ -1,1 +1,9 @@
 venv/
+build/
+dist/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.coverage
+*.egg-info/
+*.py[cod]
