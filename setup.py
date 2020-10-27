@@ -8,7 +8,7 @@ with open(os.path.join(pwd, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="nxdomain",
-    version="1.0.0",
+    version="1.0.1",
     description="Downloads and converts domain block lists for use with BIND/named RPZ files or dnsmasq host files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -17,6 +17,11 @@ setup(
     author_email="web@zopieux.com",
     install_requires=["dnspython~=2.0"],
     packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+            'nxdomain=nxdomain.__main__:main'
+        ]
+    },
     project_urls={
         "Bug Reports": "https://github.com/zopieux/nxdomain/issues",
         "Source": "https://github.com/zopieux/nxdomain",

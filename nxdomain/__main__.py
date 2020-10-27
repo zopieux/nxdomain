@@ -12,7 +12,7 @@ from nxdomain import (
 )
 
 
-def main(argv):
+def main_argv(argv):
     p = argparse.ArgumentParser(description="nxdomain -- domain block list management")
     p.add_argument("--out", required=True, help="output zone filename")
     p.add_argument(
@@ -47,5 +47,9 @@ def main(argv):
     download_and_generate(all_lists, generator, args.out)
 
 
+def main():
+    main_argv(sys.argv[1:])
+
+
 if __name__ == "__main__":  # pragma: no cover
-    main(sys.argv[1:])
+    main()
