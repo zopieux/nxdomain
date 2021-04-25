@@ -5,6 +5,8 @@
 A domain (ad) block list creator. Takes block lists from local files or URLs as input
 (in `hosts(5)` or domain-list format) and outputs a BIND zone or dnsmasq config.
 
+Version notes: see [CHANGELOG](./CHANGELOG.md).
+
 ### Sample usage
 
 ```shell
@@ -14,7 +16,7 @@ $ python -m nxdomain \
     # BIND Response Policy Zone file. Also available: --format=dnsmasq.
     --format=bind \
     # A simple list of domains, one per line. Lines starting with '#' are skipped.
-    --simple=https://mirror1.malwaredomains.com/files/justdomains \
+    --simple=https://v.firebog.net/hosts/static/w3kbl.txt \
     # A hosts(5) formatted list of domains. Lines starting with '#' are skipped.
     --hosts=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ```
