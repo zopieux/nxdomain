@@ -26,4 +26,4 @@ The only smartness is that, with `--format=bind`, the SOA serial will be increme
 
 ### License
 
-GNU General Public License v3.0
+GNU General Public License v3.0 only.
