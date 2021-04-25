@@ -37,7 +37,7 @@ jobs:
           && python -m nxdomain
           --out=adblock.zone
           --format=bind
-          --simple=https://mirror1.malwaredomains.com/files/justdomains
+          --simple=https://v.firebog.net/hosts/static/w3kbl.txt
           --hosts=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
           && ls -alh /tmp/adblock.zone
 
