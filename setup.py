@@ -8,7 +8,7 @@ with open(os.path.join(pwd, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="nxdomain",
-    version="1.0.1",
+    version="1.0.2",
     description="Downloads and converts domain block lists for use with BIND/named RPZ files or dnsmasq host files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
