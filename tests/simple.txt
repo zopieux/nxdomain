@@ -5,4 +5,5 @@ an invalid line
 
   # Another comment.
 
+# example.xyz
 example.net # An inline comment.

@@ -96,14 +96,16 @@ def parse_block_list(list_type: BlockListType, f: BinaryIO) -> Iterable[str]:
             line = raw_line.decode().strip()
             if not line:
                 continue
+            # Skip comments.
+            if line.startswith("#"):
+                continue
             if list_type is BlockListType.hosts:
                 if (match := HOSTS_REGEXP.match(line)) is not None and (
                     domain := match.group(1).strip()
                 ):
                     yield domain
             elif list_type is BlockListType.simple:
-                if not line.startswith("#"):
-                    yield line
+                yield line
             else:  # pragma: no cover
                 raise ValueError(f"unsupported list type {list_type}")
 
