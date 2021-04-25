@@ -97,7 +97,9 @@ def parse_block_list(list_type: BlockListType, f: BinaryIO) -> Iterable[str]:
             if not line:
                 continue
             if list_type is BlockListType.hosts:
-                if (match := HOSTS_REGEXP.match(line)) is not None and (
+                if line.startswith('#'):
+                    continue
+                elif (match := HOSTS_REGEXP.match(line)) is not None and (
                     domain := match.group(1).strip()
                 ):
                     yield domain
